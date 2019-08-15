@@ -932,6 +932,12 @@ public final class DerpFestSettings {
          */
         public static final String PULSE_AMBIENT_LIGHT_WIDTH = "pulse_ambient_light_width";
 
+        /**
+         * Whether tethering is allowed to use VPN upstreams
+         * 0 = false, 1 = true
+         */
+        public static final String TETHERING_ALLOW_VPN_UPSTREAMS = "tethering_allow_vpn_upstreams";
+
     }
 
     /**
