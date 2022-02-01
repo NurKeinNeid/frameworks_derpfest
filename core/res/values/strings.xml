@@ -4,7 +4,7 @@
      SPDX-FileCopyrightText: 2024 DerpFest AOSP
      SPDX-License-Identifier: Apache-2.0
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Long-press back kill application -->
     <string name="app_killed_message">Application killed</string>
 
@@ -46,4 +46,6 @@
     <string name="charging_control_notification_content_target">Battery will be fully charged at %1$s</string>
     <string name="charging_control_notification_content_target_reached">Battery is charged</string>
 
+    <!-- App lock -->
+    <string name="unlock_application">Unlock <xliff:g id="label" example="Telegram">%1$s</xliff:g></string>
 </resources>
