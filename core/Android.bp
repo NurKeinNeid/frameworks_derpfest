@@ -49,6 +49,8 @@ java_library_static {
     srcs: [":framework-derpfest-sources"],
     static_libs: [
         "vendor.lineage.touch-V1.0-java",
+        "vendor.lineage.livedisplay-V2.0-java",
+        "vendor.lineage.livedisplay-V2.1-java",
     ],
 }
 
@@ -57,6 +59,8 @@ java_sdk_library {
     srcs: [":framework-derpfest-sources"],
     static_libs: [
         "vendor.lineage.touch-V1.0-java",
+        "vendor.lineage.livedisplay-V2.0-java",
+        "vendor.lineage.livedisplay-V2.1-java",
     ],
 
     api_packages: ["framework-derpfest"],
