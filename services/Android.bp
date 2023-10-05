@@ -1,0 +1,22 @@
+//
+// SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+// SPDX-FileCopyrightText: 2024 DerpFest AOSP
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "services.derpfest-sources",
+    srcs: ["java/**/*.java"],
+    path: "java",
+    visibility: ["//frameworks/base/services"],
+}
+
+java_library_static {
+    name: "services.derpfest",
+    defaults: ["platform_service_defaults"],
+    srcs: [":services.derpfest-sources"],
+    libs: ["services.core"],
+    static_libs: [
+        "framework-derpfest.static",
+    ],
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+     SPDX-FileCopyrightText: 2024 DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources>
+    <!-- Defines external services to be started by the DerpFestSystemServer at boot. The service itself
+         should publish as a binder services in its onStart -->
+    <string-array name="config_externalDerpFestServices">
+    </string-array>
+
+</resources>

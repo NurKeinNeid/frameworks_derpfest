@@ -1,0 +1,32 @@
+//
+// SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+// SPDX-FileCopyrightText: 2024 DerpFest AOSP
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "framework-derpfest-sources",
+    srcs: [
+        "java/**/*.java",
+        "java/**/*.aidl",
+    ],
+    path: "java",
+    visibility: ["//frameworks/base"],
+}
+
+java_library_static {
+    name: "framework-derpfest.static",
+    srcs: [":framework-derpfest-sources"],
+}
+
+genrule {
+   name: "framework-derpfest-res",
+   tools: ["soong_zip"],
+   srcs: [
+       "res/**/*"
+   ],
+   out: ["framework-derpfest-res.zip"],
+   cmd: "INPUTS=($(in)) && "
+       + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
+       + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+}
