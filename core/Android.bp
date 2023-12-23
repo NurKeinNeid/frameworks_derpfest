@@ -14,9 +14,47 @@ filegroup {
     visibility: ["//frameworks/base"],
 }
 
+filegroup {
+    name: "framework-derpfest.api.public.latest",
+    srcs: ["api/current.txt"],
+}
+
+filegroup {
+    name: "framework-derpfest-removed.api.public.latest",
+    srcs: ["api/removed.txt"],
+}
+
+filegroup {
+    name: "framework-derpfest-incompatibilities.api.public.latest",
+    srcs: ["api/test-current.txt"],
+}
+
+filegroup {
+    name: "framework-derpfest.api.system.latest",
+    srcs: ["api/system-current.txt"],
+}
+
+filegroup {
+    name: "framework-derpfest-removed.api.system.latest",
+    srcs: ["api/system-removed.txt"],
+}
+
+filegroup {
+    name: "framework-derpfest-incompatibilities.api.system.latest",
+    srcs: ["api/test-current.txt"],
+}
+
 java_library_static {
     name: "framework-derpfest.static",
     srcs: [":framework-derpfest-sources"],
+}
+
+java_sdk_library {
+    name: "framework-derpfest",
+    srcs: [":framework-derpfest-sources"],
+
+    api_packages: ["framework-derpfest"],
+    dist_group: "derpfest",
 }
 
 genrule {
