@@ -47,11 +47,17 @@ filegroup {
 java_library_static {
     name: "framework-derpfest.static",
     srcs: [":framework-derpfest-sources"],
+    static_libs: [
+        "vendor.lineage.touch-V1.0-java",
+    ],
 }
 
 java_sdk_library {
     name: "framework-derpfest",
     srcs: [":framework-derpfest-sources"],
+    static_libs: [
+        "vendor.lineage.touch-V1.0-java",
+    ],
 
     api_packages: ["framework-derpfest"],
     dist_group: "derpfest",
