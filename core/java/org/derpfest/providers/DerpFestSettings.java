@@ -98,6 +98,12 @@ public final class DerpFestSettings {
          */
         public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
 
+        /**
+         * List of long-screen apps.
+         * @hide
+         */
+        public static final String LONG_SCREEN_APPS = "long_screen_apps";
+
     }
 
     /**
