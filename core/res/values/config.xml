@@ -10,6 +10,7 @@
          should publish as a binder services in its onStart -->
     <string-array name="config_externalDerpFestServices">
         <item>org.derpfest.server.hardware.LineageHardwareService</item>
+        <item>org.derpfest.server.app.LineageGlobalActionsService</item>
     </string-array>
 
     <!-- Paths to the libraries that contain device specific key handlers -->
