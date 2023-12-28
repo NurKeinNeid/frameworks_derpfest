@@ -369,6 +369,13 @@ public final class DerpFestSettings {
          */
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
+        /**
+         * Swap volume buttons on rotation
+         * 
+         * @hide
+         */
+        public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
+
     }
 
     /**
