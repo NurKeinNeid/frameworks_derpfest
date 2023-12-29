@@ -726,6 +726,13 @@ public final class DerpFestSettings {
          */
         public static final String TRANSIENT_TASK_MODE = "transient_task_mode";
 
+        /**
+         * Show app volume rows in volume panel
+         * 
+         * @hide
+         */
+        public static final String SHOW_APP_VOLUME = "show_app_volume";
+
     }
 
     /**
