@@ -935,5 +935,12 @@ public final class DerpFestSettings {
          */
         public static final String CLEARTEXT_NETWORK_POLICY = "cleartext_network_policy";
 
+        /**
+         * The amount of time in milliseconds before the device automatically reboots
+         * 
+         * @hide
+         */
+        public static final String DEVICE_REBOOT_TIMEOUT = "device_reboot_timeout";
+
     }
 }
