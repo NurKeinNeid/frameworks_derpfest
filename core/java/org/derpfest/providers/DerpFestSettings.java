@@ -741,6 +741,11 @@ public final class DerpFestSettings {
          */
         public static final String KEY_EDGE_LONG_SWIPE_ACTION = "key_edge_long_swipe_action";
 
+        /**
+         * @hide
+         */
+        public static final String QS_TRANSPARENCY = "qs_transparency";
+
     }
 
     /**
