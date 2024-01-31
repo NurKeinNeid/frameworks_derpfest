@@ -746,6 +746,13 @@ public final class DerpFestSettings {
          */
         public static final String QS_TRANSPARENCY = "qs_transparency";
 
+        /**
+         * Whether to control brightness from status bar
+         * 0 = 0ff, 1 = on
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+
     }
 
     /**
