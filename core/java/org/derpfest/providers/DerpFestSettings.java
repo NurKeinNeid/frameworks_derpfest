@@ -1006,4 +1006,18 @@ public final class DerpFestSettings {
         public static final String DEVICE_REBOOT_TIMEOUT = "device_reboot_timeout";
 
     }
+
+    public static final class Panel {
+
+        /**
+         * Activity Action: Show a settings dialog containing all app volume streams.
+         * <p>
+         * Input: Nothing.
+         * <p>
+         * Output: Nothing.
+         */
+        public static final String ACTION_APP_VOLUME =
+                "android.settings.panel.action.APP_VOLUME";
+    }
+
 }
