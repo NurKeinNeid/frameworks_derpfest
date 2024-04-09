@@ -67,6 +67,7 @@ java_sdk_library {
 
     api_packages: ["framework-derpfest"],
     dist_group: "derpfest",
+    system_ext_specific: true,
 }
 
 genrule {
