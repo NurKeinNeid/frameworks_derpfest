@@ -943,6 +943,13 @@ public final class DerpFestSettings {
          * @hide
          */
         public static final String PULSE_AMBIENT_LIGHT_WIDTH = "pulse_ambient_light_width";
+        /**
+         * Whether to show ambient edge light only when device is face down
+         * 0 = false, 1 = true
+         *
+         * @hide
+         */
+        public static final String PULSE_AMBIENT_LIGHT_FACE_DOWN = "pulse_ambient_light_face_down";
 
         /**
          * Whether tethering is allowed to use VPN upstreams
