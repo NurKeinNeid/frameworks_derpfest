@@ -15,6 +15,7 @@
         <item>org.derpfest.server.health.HealthInterfaceService</item>
         <item>org.derpfest.server.applock.AppLockManagerService$Lifecycle</item>
         <item>org.derpfest.server.app.ParallelSpaceManagerService</item>
+        <item>org.derpfest.server.display.LMOFreeformSystemService</item>
     </string-array>
 
     <!-- Paths to the libraries that contain device specific key handlers -->

@@ -22,6 +22,7 @@ java_library_static {
     static_libs: [
         "framework-derpfest.static",
         "kotlinx_coroutines",
+        "lmofreeform-server",
     ],
     jarjar_rules: "jarjar-rules.txt",
 }
