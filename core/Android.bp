@@ -15,12 +15,12 @@ filegroup {
 }
 
 filegroup {
-    name: "framework-derpfest.api.public.latest",
+    name: "framework-derpfest.api.combined.public.latest",
     srcs: ["api/current.txt"],
 }
 
 filegroup {
-    name: "framework-derpfest-removed.api.public.latest",
+    name: "framework-derpfest-removed.api.combined.public.latest",
     srcs: ["api/removed.txt"],
 }
 
@@ -30,12 +30,12 @@ filegroup {
 }
 
 filegroup {
-    name: "framework-derpfest.api.system.latest",
+    name: "framework-derpfest.api.combined.system.latest",
     srcs: ["api/system-current.txt"],
 }
 
 filegroup {
-    name: "framework-derpfest-removed.api.system.latest",
+    name: "framework-derpfest-removed.api.combined.system.latest",
     srcs: ["api/system-removed.txt"],
 }
 
