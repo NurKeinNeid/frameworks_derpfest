@@ -760,6 +760,13 @@ public final class DerpFestSettings {
          */
         public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
+        /**
+         * Whether keyguard will rotate
+         * 0 = false, 1 = true
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
     }
 
     /**
