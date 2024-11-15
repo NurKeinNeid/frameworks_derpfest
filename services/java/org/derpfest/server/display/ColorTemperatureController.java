@@ -16,6 +16,11 @@
  */
 package org.derpfest.server.display;
 
+import static org.derpfest.hardware.LiveDisplayManager.MODE_AUTO;
+import static org.derpfest.hardware.LiveDisplayManager.MODE_DAY;
+import static org.derpfest.hardware.LiveDisplayManager.MODE_NIGHT;
+import static org.derpfest.hardware.LiveDisplayManager.MODE_OFF;
+
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.net.Uri;
@@ -36,11 +41,6 @@ import org.derpfest.providers.DerpFestSettings;
 import org.derpfest.hardware.LineageHardwareManager;
 import org.derpfest.hardware.LiveDisplayManager;
 import org.derpfest.util.ColorUtils;
-
-import static org.derpfest.hardware.LiveDisplayManager.MODE_AUTO;
-import static org.derpfest.hardware.LiveDisplayManager.MODE_DAY;
-import static org.derpfest.hardware.LiveDisplayManager.MODE_NIGHT;
-import static org.derpfest.hardware.LiveDisplayManager.MODE_OFF;
 
 public class ColorTemperatureController extends LiveDisplayFeature {
 

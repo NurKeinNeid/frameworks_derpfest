@@ -5,6 +5,11 @@
 
 package org.derpfest.server.health;
 
+import static org.derpfest.health.HealthInterface.MODE_NONE;
+import static org.derpfest.health.HealthInterface.MODE_AUTO;
+import static org.derpfest.health.HealthInterface.MODE_MANUAL;
+import static org.derpfest.health.HealthInterface.MODE_LIMIT;
+
 import static org.derpfest.server.health.Util.getTimeMillisFromSecondOfDay;
 import static org.derpfest.server.health.Util.msToString;
 
@@ -23,22 +28,17 @@ import android.text.format.DateUtils;
 import android.util.Log;
 
 import com.android.internal.R;
+
 import org.derpfest.server.health.ccprovider.ChargingControlProvider;
 import org.derpfest.server.health.ccprovider.Deadline;
 import org.derpfest.server.health.ccprovider.Toggle;
 
-import org.derpfest.providers.DerpFestSettings;
-
-import java.io.PrintWriter;
-
 import android.provider.Settings;
+import org.derpfest.providers.DerpFestSettings;
 
 import vendor.lineage.health.IChargingControl;
 
-import static org.derpfest.health.HealthInterface.MODE_NONE;
-import static org.derpfest.health.HealthInterface.MODE_AUTO;
-import static org.derpfest.health.HealthInterface.MODE_MANUAL;
-import static org.derpfest.health.HealthInterface.MODE_LIMIT;
+import java.io.PrintWriter;
 
 public class ChargingControlController extends LineageHealthFeature {
     private final IChargingControl mChargingControl;

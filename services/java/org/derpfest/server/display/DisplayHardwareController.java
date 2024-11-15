@@ -30,14 +30,14 @@ import android.util.MathUtils;
 import android.util.Slog;
 import android.view.animation.LinearInterpolator;
 
+import org.derpfest.providers.DerpFestSettings;
+import org.derpfest.hardware.LineageHardwareManager;
+import org.derpfest.hardware.LiveDisplayManager;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
-
-import org.derpfest.providers.DerpFestSettings;
-import org.derpfest.hardware.LineageHardwareManager;
-import org.derpfest.hardware.LiveDisplayManager;
 
 public class DisplayHardwareController extends LiveDisplayFeature {
 

@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ *               2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +25,16 @@ import android.util.Range;
 import android.util.Slog;
 import android.util.SparseArray;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.List;
-
 import org.derpfest.providers.DerpFestSettings;
 import org.derpfest.hardware.LineageHardwareManager;
 import org.derpfest.hardware.DisplayMode;
 import org.derpfest.hardware.HSIC;
 import org.derpfest.hardware.LiveDisplayManager;
+
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.List;
 
 public class PictureAdjustmentController extends LiveDisplayFeature {
 

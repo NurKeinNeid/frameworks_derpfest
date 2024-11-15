@@ -16,6 +16,10 @@
  */
 package org.derpfest.server.display;
 
+import static org.derpfest.hardware.LiveDisplayManager.MODE_FIRST;
+import static org.derpfest.hardware.LiveDisplayManager.MODE_LAST;
+import static org.derpfest.hardware.LiveDisplayManager.MODE_OFF;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -42,6 +46,12 @@ import org.derpfest.server.common.UserContentObserver;
 import org.derpfest.server.display.TwilightTracker.TwilightListener;
 import org.derpfest.server.display.TwilightTracker.TwilightState;
 
+import org.derpfest.app.LineageContextConstants;
+import org.derpfest.providers.DerpFestSettings;
+import org.derpfest.hardware.HSIC;
+import org.derpfest.hardware.ILiveDisplayService;
+import org.derpfest.hardware.LiveDisplayConfig;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -49,16 +59,6 @@ import java.util.BitSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-
-import org.derpfest.app.LineageContextConstants;
-import org.derpfest.providers.DerpFestSettings;
-import org.derpfest.hardware.HSIC;
-import org.derpfest.hardware.ILiveDisplayService;
-import org.derpfest.hardware.LiveDisplayConfig;
-
-import static org.derpfest.hardware.LiveDisplayManager.MODE_FIRST;
-import static org.derpfest.hardware.LiveDisplayManager.MODE_LAST;
-import static org.derpfest.hardware.LiveDisplayManager.MODE_OFF;
 
 /**
  * LiveDisplay is an advanced set of features for improving
