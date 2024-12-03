@@ -290,6 +290,8 @@ public class ChargingControlController extends LineageHealthFeature {
     private void onPowerConnected() {
         if (mBattReceiver == null) {
             mBattReceiver = new LineageHealthBatteryBroadcastReceiver();
+        } else {
+            mContext.unregisterReceiver(mBattReceiver);
         }
         IntentFilter battFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         mContext.registerReceiver(mBattReceiver, battFilter);
@@ -298,6 +300,7 @@ public class ChargingControlController extends LineageHealthFeature {
     private void onPowerDisconnected() {
         if (mBattReceiver != null) {
             mContext.unregisterReceiver(mBattReceiver);
+            mBattReceiver = null;
         }
 
         // On disconnected, reset internal state
