@@ -523,6 +523,13 @@ public final class DerpFestSettings {
         public static final String BACK_WAKE_SCREEN = "back_wake_screen";
 
         /**
+         * Wether to mute audio by pressing the volume up and down keys simultneously on Android TV,
+         * the value is boolean.
+         * 0 = 0ff, 1 = on
+         */
+        public static final String VOLUME_UP_AND_DOWN_MUTE = "volume_up_and_down_mute";
+
+        /**
          * Whether to wake the screen with the menu key, the value is boolean.
          * 0 = 0ff, 1 = on
          * 
