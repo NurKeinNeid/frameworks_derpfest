@@ -37,4 +37,6 @@ interface IHealthInterface {
 
     boolean resetChargingControl();
     boolean allowFineGrainedSettings();
+
+    int getChargingControlStatus();
 }

@@ -8,6 +8,8 @@ package org.derpfest.server.health.ccprovider;
 import static org.derpfest.health.HealthInterface.MODE_AUTO;
 import static org.derpfest.health.HealthInterface.MODE_MANUAL;
 
+import static android.os.BatteryManager.CHARGING_POLICY_DEFAULT;
+
 import static org.derpfest.server.health.Util.msToString;
 
 import android.content.Context;
@@ -67,6 +69,11 @@ public class Deadline extends ChargingControlProvider {
         } catch (Exception e) {
             Log.e(TAG, "Failed to reset charging deadline", e);
         }
+    }
+
+    @Override
+    protected int onGetStatus() {
+        return CHARGING_POLICY_DEFAULT;
     }
 
     @Override

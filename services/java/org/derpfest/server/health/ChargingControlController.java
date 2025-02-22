@@ -10,6 +10,8 @@ import static org.derpfest.health.HealthInterface.MODE_AUTO;
 import static org.derpfest.health.HealthInterface.MODE_MANUAL;
 import static org.derpfest.health.HealthInterface.MODE_LIMIT;
 
+import static android.os.BatteryManager.CHARGING_POLICY_DEFAULT;
+
 import static org.derpfest.server.health.Util.getTimeMillisFromSecondOfDay;
 import static org.derpfest.server.health.Util.msToString;
 
@@ -472,6 +474,14 @@ public class ChargingControlController extends LineageHealthFeature {
         pw.println("  mIsControlCancelledOnce: " + mIsControlCancelledOnce);
         pw.println();
         mCurrentProvider.dump(pw);
+    }
+
+    public int getStatus() {
+        if (mCurrentProvider == null) {
+            return CHARGING_POLICY_DEFAULT;
+        }
+
+        return mCurrentProvider.getStatus();
     }
 
     /* Battery Broadcast Receiver */

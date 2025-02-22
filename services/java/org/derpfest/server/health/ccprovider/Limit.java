@@ -9,7 +9,10 @@ import static org.derpfest.health.HealthInterface.MODE_AUTO;
 import static org.derpfest.health.HealthInterface.MODE_LIMIT;
 import static org.derpfest.health.HealthInterface.MODE_MANUAL;
 
+import static android.os.BatteryManager.CHARGING_POLICY_DEFAULT;
+
 import android.content.Context;
+import android.os.RemoteException;
 import android.util.Log;
 
 import com.android.internal.R;
@@ -21,58 +24,51 @@ import vendor.lineage.health.IChargingControl;
 import java.io.PrintWriter;
 
 public class Limit extends ChargingControlProvider {
-    protected final int mChargingLimitMargin;
 
     public Limit(IChargingControl chargingControl, Context context) {
         super(context, chargingControl);
-
-        boolean isBypassSupported = isHALModeSupported(ChargingControlSupportedMode.BYPASS);
-        if (!isBypassSupported) {
-            mChargingLimitMargin = mContext.getResources().getInteger(
-                    R.integer.config_chargingControlBatteryRechargeMargin);
-        } else {
-            mChargingLimitMargin = 1;
-        }
-        Log.i(TAG, "isBypassSupported: " + isBypassSupported);
     }
 
     @Override
     protected boolean onBatteryChanged(float currentPct, int targetPct) {
-        Log.i(TAG, "Current battery level: " + currentPct + ", target: " + targetPct);
-        return setChargingLimit(targetPct);
+        setChargingLimit(targetPct);
+        return false;
+    }
+
+    @Override
+    protected boolean onBatteryChanged(float batteryPct, long startTime, long targetTime,
+            int configMode) {
+        return false;
     }
 
     @Override
     protected void onEnabled() {
-        onReset();
     }
 
     @Override
     protected void onDisable() {
-        onReset();
+        setChargingLimit(100);
     }
 
     @Override
     protected void onReset() {
-        setChargingLimit(100);
     }
 
-    private boolean setChargingLimit(int targetPct) {
+    @Override
+    protected int onGetStatus() {
+        return CHARGING_POLICY_DEFAULT;
+    }
+
+    private void setChargingLimit(int targetPct) {
         try {
             if (mChargingControl.getChargingLimit().max != targetPct) {
                 ChargingLimitInfo limit = new ChargingLimitInfo();
-                if (targetPct == 100) {
-                    limit.min = 0;
-                } else {
-                    limit.min = targetPct - mChargingLimitMargin;
-                }
+                limit.min = 0;
                 limit.max = targetPct;
                 mChargingControl.setChargingLimit(limit);
             }
-            return true;
-        } catch (Exception e) {
+        } catch (RemoteException e) {
             Log.e(TAG, "Failed to set charging limit", e);
-            return false;
         }
     }
 
